@@ -85,7 +85,6 @@ export default function Page() {
                     <Suspense fallback={null}>
                         <Glass />
                     </Suspense>
-                    <Environment files="./textures/environments/studio_small_03_2k.hdr" resolution={340} />
 
 
                     <OrbitControls autoRotate={rotate} minZoom={10} maxZoom={100} target={[0, 0, 0]} />
