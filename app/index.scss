@@ -3,8 +3,8 @@
   src: url("/fonts/BasementGrotesque-Black_v1.202.woff") format("woff");
 }
 @font-face {
-  font-family: "Technotype";
-  src: url("/fonts/Technotype34-Regular.otf") format("otf");
+  font-family: "Techno";
+  src: url("/fonts/Technotype34-Regular.woff") format("woff");
 }
 
 @font-face {
@@ -64,7 +64,7 @@ body {
   overscroll-behavior-y: none;
   background-color: #101010;
   color: orangered;
-  font-family: "Grotesque", "Inter var", sans-serif;
+  font-family: "GeistMono" "Grotesque", "Inter var", sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -214,12 +214,12 @@ body {
   padding: 10px;
   font-size: 10px;
   z-index: 2;
+  font-family: 'GeistMono';
   background: url("/images/brush.svg");
   background-repeat: no-repeat;
   background-size: 100% 50%;
   background-position: 0% 55%;
-  font-family: cursive;
-  background: -webkit-linear-gradient(#69e4ff, #f33fea);
+  background: -webkit-linear-gradient(#fb9191, #6b70ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
@@ -228,7 +228,6 @@ body {
     padding-left: 3px;
     &:hover {
       cursor: pointer;
-      transform: scale(1.05);
       text-decoration: underline;
     }
   }
