@@ -1,6 +1,6 @@
 'use client';
 
-import { Environment, Html, OrbitControls, Stats, useProgress } from '@react-three/drei';
+import { Html, OrbitControls, Stats, useProgress } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 import { Bloom, EffectComposer } from '@react-three/postprocessing';
 import { Leva, useControls } from 'leva';
@@ -10,10 +10,6 @@ import Credits from './components/Credit';
 import Debug from './components/Debug';
 import Glass from './components/Glass';
 import './index.scss';
-import Cube from './components/Cube';
-import Sphere from './components/TorusKnot';
-import TorusKnot from './components/TorusKnot';
-import { Twisted } from './components/Twisted';
 
 function Loader() {
     const { progress } = useProgress();
@@ -44,7 +40,6 @@ function FPS({ fps }) {
 
 export default function Page() {
     const [active, setActive] = useState(false);
-
 
     useEffect(() => {
         addEventListener('debug', () => setActive(true))
@@ -79,7 +74,7 @@ export default function Page() {
             <Canvas
                 dpr={[1, 2]}
                 gl={{ antialias: true, alpha: false, powerPreference: 'high-performance' }}
-                camera={{ frustumCulled: true, fov: 50, position: [0, 0, 25], zoom: 1, }}>
+                camera={{ frustumCulled: true, fov: 50, position: [20, -10, 25], zoom: 3, }}>
 
                 <color attach="background" args={[background]} />
 
@@ -88,8 +83,8 @@ export default function Page() {
                     {perf ? <Perf align="top-right" /> : null}
                     <Suspense fallback={null}>
                         {/* <Cube position={[10, 0, 0]} rotation={[45, 0, -45]} scale={3} /> */}
-                        <Twisted position={[10, 0, 0]} rotation={[45, 0, -45]} scale={3} />
-                        <TorusKnot position={[-10, 0, 0]} rotation={[-45, 0, 45]} scale={.3} />
+                        {/* <Twisted position={[10, 0, 0]} rotation={[45, 0, -45]} scale={3} /> */}
+                        {/* <TorusKnot position={[-10, 0, 0]} rotation={[-45, 0, 45]} scale={.3} /> */}
                         <Glass />
                     </Suspense>
 
