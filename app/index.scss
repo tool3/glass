@@ -206,23 +206,23 @@ body {
   }
 }
 
-input:checked + label {
-  background-color: orangered !important;
-  &:hover {
-    outline: 1px solid orangered;
-  }
-}
+// input:checked + label {
+//   background-color: orangered !important;
+//   &:hover {
+//     outline: 1px solid orangered;
+//   }
+// }
 
-input + label {
-  background-color: #373c4b !important;
-}
+// input + label {
+//   background-color: #373c4b !important;
+// }
 
-input + label {
-  background-color: unset;
-  &:hover {
-    outline: 1px solid orangered;
-  }
-}
+// input + label {
+//   background-color: unset;
+//   &:hover {
+//     outline: 1px solid orangered;
+//   }
+// }
 
 .credits {
   position: absolute;

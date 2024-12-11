@@ -10,6 +10,10 @@ import Credits from './components/Credit';
 import Debug from './components/Debug';
 import Glass from './components/Glass';
 import './index.scss';
+import Cube from './components/Cube';
+import Sphere from './components/TorusKnot';
+import TorusKnot from './components/TorusKnot';
+import { Twisted } from './components/Twisted';
 
 function Loader() {
     const { progress } = useProgress();
@@ -51,8 +55,8 @@ export default function Page() {
         }
     }, [])
 
-    const { fps, perf, background, rotate} = useControls({
-        rotate: true,
+    const { fps, perf, background, rotate } = useControls({
+        rotate: false,
         fps: { value: false, color: 'red' },
         perf: false,
         background: 'black',
@@ -72,7 +76,7 @@ export default function Page() {
             <Debug />
             <Credits />
 
-            <Canvas 
+            <Canvas
                 dpr={[1, 2]}
                 gl={{ antialias: true, alpha: false, powerPreference: 'high-performance' }}
                 camera={{ frustumCulled: true, fov: 50, position: [0, 0, 25], zoom: 1, }}>
@@ -83,11 +87,14 @@ export default function Page() {
 
                     {perf ? <Perf align="top-right" /> : null}
                     <Suspense fallback={null}>
+                        {/* <Cube position={[10, 0, 0]} rotation={[45, 0, -45]} scale={3} /> */}
+                        <Twisted position={[10, 0, 0]} rotation={[45, 0, -45]} scale={3} />
+                        <TorusKnot position={[-10, 0, 0]} rotation={[-45, 0, 45]} scale={.3} />
                         <Glass />
                     </Suspense>
 
 
-                    <OrbitControls autoRotate={rotate} minZoom={10} maxZoom={100} target={[0, 0, 0]} />
+                    <OrbitControls makeDefault autoRotate={rotate} minZoom={10} maxZoom={100} target={[0, 0, 0]} />
                     <EffectComposer autoClear={false}>
                         {bloom.enabled ?
                             <Bloom
