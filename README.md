@@ -1,12 +1,7 @@
-# RAGEBOARD
+# Glass
 
-![](./public/images/opengraph-image.png)
+![](./public/images/glass.png)
 
+exploring different matcaps and their effect on 3d text.   
 
 written with `react-three-fiber` and its family.   
-
-inspired by 2024.
-
-
-> [!WARNING]  
-> May cause damage to actual keyboard.

@@ -51,7 +51,8 @@ export default function Page() {
         }
     }, [])
 
-    const { fps, perf, background } = useControls({
+    const { fps, perf, background, rotate} = useControls({
+        rotate: true,
         fps: { value: false, color: 'red' },
         perf: false,
         background: 'black',
@@ -87,7 +88,7 @@ export default function Page() {
                     <Environment files="./textures/environments/studio_small_03_2k.hdr" resolution={340} />
 
 
-                    <OrbitControls dampingFactor={0.3} minZoom={10} maxZoom={100} target={[0, 0, 0]} />
+                    <OrbitControls autoRotate={rotate} dampingFactor={0.3} minZoom={10} maxZoom={100} target={[0, 0, 0]} />
                     <EffectComposer autoClear={false}>
                         {bloom.enabled ?
                             <Bloom
