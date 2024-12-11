@@ -51,7 +51,7 @@ export default function Page() {
     }, [])
 
     const { fps, perf, background, rotate } = useControls({
-        rotate: false,
+        rotate: true,
         fps: { value: false, color: 'red' },
         perf: false,
         background: 'black',
@@ -90,7 +90,7 @@ export default function Page() {
 
 
                     <OrbitControls makeDefault autoRotate={rotate} minZoom={10} maxZoom={100} target={[0, 0, 0]} />
-                    <EffectComposer autoClear={false}>
+                    <EffectComposer multisampling={0}>
                         {bloom.enabled ?
                             <Bloom
                                 intensity={bloom.intensity}
