@@ -18,7 +18,7 @@ export default function Glass(props) {
 
   const matcap = useControls('Matcap', {
     matcap: {
-      value: 'glass_16.png',
+      value: 'glass_18.png',
       options
     }
   })
