@@ -75,7 +75,7 @@ export default function Page() {
             <Canvas 
                 dpr={[1, 2]}
                 gl={{ antialias: true, alpha: false, powerPreference: 'high-performance' }}
-                camera={{ frustumCulled: true, fov: 50, position: [0, 0,  200], zoom: 25, }}>
+                camera={{ frustumCulled: true, fov: 50, position: [0, 0, 25], zoom: 1, }}>
 
                 <color attach="background" args={[background]} />
 
@@ -88,7 +88,7 @@ export default function Page() {
                     <Environment files="./textures/environments/studio_small_03_2k.hdr" resolution={340} />
 
 
-                    <OrbitControls autoRotate={rotate} dampingFactor={0.3} minZoom={10} maxZoom={100} target={[0, 0, 0]} />
+                    <OrbitControls autoRotate={rotate} minZoom={10} maxZoom={100} target={[0, 0, 0]} />
                     <EffectComposer autoClear={false}>
                         {bloom.enabled ?
                             <Bloom
