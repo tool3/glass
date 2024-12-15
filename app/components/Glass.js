@@ -9,7 +9,7 @@ export default function Glass(props) {
   const { nodes, materials } = useGLTF('/models/glass.glb');
   
 
-  const options = Array.from({ length: 59 }, (_, i) => 'glass_' + (i + 1) + '.png')
+  const options = Array.from({ length: 61 }, (_, i) => 'glass_' + (i + 1) + '.png')
     .reduce((acc, curr) => {
       acc[curr.replace('.png', '')] = curr;
       return acc;
@@ -18,7 +18,7 @@ export default function Glass(props) {
 
   const matcap = useControls('Matcap', {
     matcap: {
-      value: 'glass_18.png',
+      value: 'glass_16.png',
       options
     }
   })
